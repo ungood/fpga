@@ -6,3 +6,4 @@ simulation
 *.bak
 *.done
 *.pin
+qsim
