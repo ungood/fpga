@@ -1,9 +1,11 @@
 db
 incremental_db
 simulation
+qsim
+greybox_tmp
 *.rpt
 *.summary
+*.smsg
 *.bak
 *.done
 *.pin
-qsim
