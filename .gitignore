@@ -5,3 +5,4 @@ simulation
 *.summary
 *.bak
 *.done
+*.pin
