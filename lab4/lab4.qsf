@@ -16,16 +16,16 @@
 #
 # -------------------------------------------------------------------------- #
 #
-# Quartus II 64-Bit
+# Quartus II
 # Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition
-# Date created = 05:55:30  May 10, 2011
+# Date created = 21:19:14  May 11, 2011
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		vga_assignment_defaults.qdf
+#		lab4_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -38,23 +38,17 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C20F484C6
-set_global_assignment -name TOP_LEVEL_ENTITY DE1
+set_global_assignment -name TOP_LEVEL_ENTITY Lab4Ex5
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "10.1 SP1"
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "05:55:30  MAY 10, 2011"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:19:14  MAY 11, 2011"
 set_global_assignment -name LAST_QUARTUS_VERSION "10.1 SP1"
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
-set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name VERILOG_FILE VgaSyncGenerator.v
-set_global_assignment -name QIP_FILE PLL.qip
-set_global_assignment -name VERILOG_FILE VgaController.v
-set_global_assignment -name VERILOG_FILE test/DE1.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
 set_location_assignment PIN_L22 -to SW[0]
 set_location_assignment PIN_L21 -to SW[1]
 set_location_assignment PIN_M22 -to SW[2]
@@ -329,10 +323,26 @@ set_location_assignment PIN_P15 -to GPIO_1[32]
 set_location_assignment PIN_N15 -to GPIO_1[33]
 set_location_assignment PIN_P17 -to GPIO_1[34]
 set_location_assignment PIN_P18 -to GPIO_1[35]
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_location_assignment PIN_D12 -to CLOCK_27[0]
 set_location_assignment PIN_E12 -to CLOCK_27[1]
 set_location_assignment PIN_B12 -to CLOCK_24[0]
 set_location_assignment PIN_A12 -to CLOCK_24[1]
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "R:/Projects/fpga/lab4/Lab4Ex1.vwf"
+set_global_assignment -name VERILOG_FILE ../common/SevenSegment.v
+set_global_assignment -name VERILOG_FILE ../common/OneHertz.v
+set_global_assignment -name VERILOG_FILE TFlipFlop.v
+set_global_assignment -name VERILOG_FILE Lab4Ex1.v
+set_global_assignment -name VERILOG_FILE Counter8.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE "R:/Projects/fpga/lab4/Lab4Ex1.vwf"
+set_global_assignment -name VERILOG_FILE Counter4.v
+set_global_assignment -name VERILOG_FILE Counter16.v
+set_global_assignment -name QIP_FILE Counter16_LPM.qip
+set_global_assignment -name VERILOG_FILE Lab4Ex4.v
+set_global_assignment -name VERILOG_FILE SevenSegmentDE1.v
+set_global_assignment -name VERILOG_FILE Lab4Ex5.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 2147039 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

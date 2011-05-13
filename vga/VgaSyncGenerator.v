@@ -3,21 +3,22 @@ module VgaSyncGenerator(
     output _hSync,
     output _vSync,
     output reg isVisible,
-    output reg [9:0] counterX,
-    output reg [8:0] counterY
+    output [9:0] x,
+    output [8:0] y
 );
     
     reg hSync, vSync;
+    reg [9:0] counterX, counterY;
     
     localparam [9:0] H_ACTIVE    = 10'd639;
     localparam [9:0] H_SYNC_LO   = 10'd656;
     localparam [9:0] H_SYNC_HI   = 10'd751;
     localparam [9:0] H_MAX       = 10'd799;
     
-    localparam [8:0] V_ACTIVE    = 9'd479;
-    localparam [8:0] V_SYNC_LO   = 9'd491;
-    localparam [8:0] V_SYNC_HI   = 9'd492;
-    localparam [8:0] V_MAX       = 9'd523;
+    localparam [9:0] V_ACTIVE    = 10'd479;
+    localparam [9:0] V_SYNC_LO   = 10'd491;
+    localparam [9:0] V_SYNC_HI   = 10'd492;
+    localparam [9:0] V_MAX       = 10'd523;
          
     wire xIsMaxed = counterX == H_MAX;
     wire yIsMaxed = counterY == V_MAX;
@@ -39,4 +40,6 @@ module VgaSyncGenerator(
             
     assign _hSync = ~hSync;
     assign _vSync = ~vSync;
+    assign x = counterX;
+    assign y = counterY[8:0];
 endmodule

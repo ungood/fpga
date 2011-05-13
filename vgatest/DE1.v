@@ -1,16 +1,10 @@
 module DE1(
-    input [1:0] CLOCK_27,
+    input CLOCK_50,
     output [3:0] VGA_R, VGA_G, VGA_B,
     output VGA_HS, VGA_VS);
 
-    wire vgaClock;
-    
-    PLL vgaPll(
-        .inclk0(CLOCK_27[0]),
-        .c0(vgaClock));
-    
     VgaController controller0(
-        vgaClock,
+        CLOCK_50,
         VGA_HS, VGA_VS,
         VGA_R, VGA_G, VGA_B);
 endmodule

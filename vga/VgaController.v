@@ -14,8 +14,8 @@ module VgaController(
         ._hSync(_hSync),
         ._vSync(_vSync),
         .isVisible(isVisible),
-        .counterX(x),
-        .counterY(y));
+        .x(x),
+        .y(y));
     
     always @(posedge clk) begin
         r <= isVisible ? x[3:0] : 0;
